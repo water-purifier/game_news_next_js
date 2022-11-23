@@ -16,11 +16,11 @@ function Article({ post }) {
         </Card.Title>{' '}
         <Card.Eyebrow
           as="time"
-          dateTime={post.updated_at}
+          dateTime={post.created_at}
           className="md:hidden"
           decorate
         >
-          {formatDate(post.updated_at)}
+          {formatDate(post.created_at)}
         </Card.Eyebrow>{' '}
         <Card.Description>{post.description_cn}</Card.Description>{' '}
         <Card.Cta>Read article</Card.Cta>{' '}
@@ -30,7 +30,7 @@ function Article({ post }) {
         dateTime={post.created_at}
         className="mt-1 hidden md:block"
       >
-        {formatDate(post.updated_at)}
+        {formatDate(post.created_at)}
       </Card.Eyebrow>
     </article>
   )
