@@ -27,8 +27,9 @@ function Article({post}) {
 
 
 
-export default function ArticlesIndex({data,api_server}) {
+export default function ArticlesIndex({data}) {
     const [posts, setPosts] = useState(data)
+    const api_server = 'http://api.iqiafan.com/api'
 
     const [hasMore, setHasMore] = useState(true)
     const getMorePost = async () => {
