@@ -49,7 +49,7 @@ export default function ArticlesIndex({ datas }) {
     // );
     const newPosts = await res.json()
     setPosts((post) => [...post, ...newPosts])
-    console.log(newPosts)
+    // console.log(newPosts)
   }
 
   return (

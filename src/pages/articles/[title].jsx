@@ -16,7 +16,7 @@ export default function Home(props){
 export async function getStaticPaths(){
     const res = await fetch(`${process.env.API_HOST}/posts_paths`)
     const posts = await res.json()
-    posts.map((post)=>console.log(post))
+    // posts.map((post)=>console.log(post))
     const paths = posts.map((post)=>({
         params: {
             title: post.title_cn.toString(),
