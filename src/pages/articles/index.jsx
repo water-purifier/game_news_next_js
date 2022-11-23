@@ -27,10 +27,8 @@ function Article({post}) {
 
 
 
-export default function ArticlesIndex({data}) {
+export default function ArticlesIndex({data,api_server}) {
     const [posts, setPosts] = useState(data)
-    const api_server = 'http://api.iqiafan.com/api'
-
     const [hasMore, setHasMore] = useState(true)
     const getMorePost = async () => {
         // const res = await fetch(`${api_server}/posts_infinity?start=${posts.length}&limit=10`)
