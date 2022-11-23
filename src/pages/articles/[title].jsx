@@ -24,7 +24,7 @@ export async function getStaticPaths(){
     const posts = await getPostsPaths()
     const paths = posts.map((post)=>({
         params: {
-            title: post.title_cn,
+            title: post.title_en.toString(),
             id: post.id.toString(),
         }
     }))

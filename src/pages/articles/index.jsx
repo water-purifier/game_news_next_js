@@ -11,7 +11,7 @@ function Article({post}) {
     return (
         <article className="md:grid md:grid-cols-4 md:items-baseline">
             <Card className="md:col-span-3">
-                {' '} <Card.Title href={`/articles/${post.title_cn}`}>
+                {' '} <Card.Title href={`/articles/${post.title_en}`}>
                 {post.title_cn}
             </Card.Title>{' '} <Card.Eyebrow as="time" dateTime={post.created_at} className="md:hidden" decorate
             >
