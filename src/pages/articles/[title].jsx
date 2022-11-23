@@ -1,5 +1,6 @@
 import {useRouter} from "next/router";
 import { ArticleLayout } from '@/components/ArticleLayout'
+import {getPosts} from "@/pages/articles/index";
 
 export default function Home(props){
     const meta = {
@@ -13,10 +14,14 @@ export default function Home(props){
     );
 }
 
-export async function getStaticPaths(){
+export async function getPostsPaths(){
     const res = await fetch(`${process.env.API_HOST}/posts_paths`)
-    const posts = await res.json()
-    // posts.map((post)=>console.log(post))
+    const data = await res.json()
+    return data
+}
+
+export async function getStaticPaths(){
+    const posts = await getPostsPaths()
     const paths = posts.map((post)=>({
         params: {
             title: post.title_cn.toString(),
@@ -29,6 +34,12 @@ export async function getStaticPaths(){
     }
 }
 
+export async function getPost(id){
+    const res = await fetch(`${process.env.API_HOST}/posts/${id}`)
+    const data = await res.json()
+    return data
+}
+
 export async function getStaticProps({params}) {
     const paths = await getStaticPaths();
     let id = 0;
@@ -37,8 +48,7 @@ export async function getStaticProps({params}) {
             id = path.params.id;
         }
     })
-    const res = await fetch(`${process.env.API_HOST}/posts/${id}`)
-    const post = await res.json()
+    const post = await getPost(id)
     return {
         props: {
             post,
