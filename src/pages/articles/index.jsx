@@ -42,7 +42,7 @@ export default function ArticlesIndex({ datas }) {
   const [hasMore, setHasMore] = useState(true)
   const getMorePost = async () => {
     const res = await fetch(
-      `http://localhost:8000/api/posts_infinity?start=${posts.length}&limit=10`
+      `${process.env.API_HOST}/posts_infinity?start=${posts.length}&limit=10`
     )
     // const res = await fetch(
     //     `https://jsonplaceholder.typicode.com/todos?_start=${posts.length}&_limit=10`
