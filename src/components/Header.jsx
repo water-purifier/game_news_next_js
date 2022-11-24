@@ -243,7 +243,7 @@ function Avatar({ large = false, className, ...props }) {
       {/*  )}*/}
       {/*  priority*/}
       {/*/>*/}
-      <img src='../images/main_logo.png' alt="logo" width='2.25rem' className="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9" />
+      <img src='../../images/main_logo.png' alt="logo" width='2.25rem' className="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9" />
     </Link>
   )
 }
