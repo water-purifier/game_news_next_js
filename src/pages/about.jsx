@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
-import aboutPic from '@/images/portrait.jpg'
+import aboutPic from '../images/portrait.jpg'
 import { Container } from '@/components/Container'
 import {
   TwitterIcon,
