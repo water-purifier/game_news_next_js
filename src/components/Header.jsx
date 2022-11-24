@@ -233,16 +233,17 @@ function Avatar({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image
-        src={avatarImage}
-        alt=""
-        sizes={large ? '4rem' : '2.25rem'}
-        className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
-        )}
-        priority
-      />
+      {/*<Image*/}
+      {/*  src={avatarImage}*/}
+      {/*  alt=""*/}
+      {/*  sizes={large ? '4rem' : '2.25rem'}*/}
+      {/*  className={clsx(*/}
+      {/*    'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',*/}
+      {/*    large ? 'h-16 w-16' : 'h-9 w-9'*/}
+      {/*  )}*/}
+      {/*  priority*/}
+      {/*/>*/}
+      <img src='./images/main_logo.png' alt="logo" width='2.25rem' className="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9" />
     </Link>
   )
 }
