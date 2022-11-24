@@ -18,6 +18,18 @@ function ArrowLeftIcon(props) {
   )
 }
 
+function nToBR(str){
+    if (str == undefined || str == null)
+    {
+        return "";
+    }
+
+    str = str.replace(/\r\n/ig, '<br>');
+    str = str.replace(/\\n/ig, '<br>');
+    str = str.replace(/\n/ig, '<br>');
+    return str;
+}
+
 export function ArticleLayout({
   meta,
   post,
@@ -64,7 +76,9 @@ export function ArticleLayout({
                   {post.images.map((image)=>(
                       <img key={image.id} src={image.image_url} alt="" width="100%" height="100%" />
                   ))}
-                  {post.text_cn}
+                  <div>
+                      {post.text_cn.split('\n').map((item,i)=><p key={i}>{item}</p>)}
+                  </div>
               </Prose>
 
 
