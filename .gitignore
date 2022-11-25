@@ -33,3 +33,6 @@ yarn-error.log*
 
 # generated files
 /public/rss/
+
+# static folder for DigitalOcean App Platform
+_static

@@ -1,6 +1,5 @@
 import {useRouter} from "next/router";
 import { ArticleLayout } from '@/components/ArticleLayout'
-import {getPosts} from "@/pages/articles/index";
 
 export default function Home(props){
     const meta = {
