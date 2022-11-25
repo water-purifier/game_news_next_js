@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 8001",
-    "export": "npm run build && next export -o _static"
+    "export": "next export",
+    "export2": "npm run build && next export"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

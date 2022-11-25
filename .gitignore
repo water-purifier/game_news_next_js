@@ -35,4 +35,5 @@ yarn-error.log*
 /public/rss/
 
 # static folder for DigitalOcean App Platform
-_static
+/_static
+/out
