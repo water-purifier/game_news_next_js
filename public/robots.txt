@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://iqiafan.com/sitemap.xml
