@@ -76,7 +76,7 @@ export function ArticleLayout({
                       <img key={image.id} src={image.image_url} alt="" width="100%" height="100%" />
                   ))}
                   <div>
-                      {post.text_cn.split('\n').map((item,i)=><p key={i}>{item}</p>)}
+                      {post.text_cn.replace('看更多','').split('\n').map((item,i)=><p key={i}>{item}</p>)}
                   </div>
               </Prose>
 
