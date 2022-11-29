@@ -69,6 +69,8 @@ export function ArticleLayout({
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>
+                  <span className="ml-3">-</span>
+                  <span className="ml-3">{meta.author}</span>
                 </time>
               </header>
               <Prose className="mt-8">

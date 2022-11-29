@@ -3,7 +3,7 @@ import { ArticleLayout } from '@/components/ArticleLayout'
 
 export default function Home(props){
     const meta = {
-        author: props.post.author,
+        author: props.post.author_ori,
         date: props.post.created_at,
         title: props.post.title_cn,
         description: props.post.description_cn,
