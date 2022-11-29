@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import {Card} from '@/components/Card'
 import {SimpleLayout} from '@/components/SimpleLayout'
-import {formatDate} from '@/lib/formatDate'
+import {formatDate,yyyymmddDate} from '@/lib/formatDate'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import React, {useState} from 'react'
 import * as process from "process";
@@ -13,13 +13,13 @@ function Article({post}) {
             <Card className="md:col-span-3">
                 {' '} <Card.Title href={`/articles/${post.id}`}>
                 {post.title_cn}
-            </Card.Title>{' '} <Card.Eyebrow as="time" dateTime={post.created_at} className="md:hidden" decorate
+            </Card.Title>{' '} <Card.Eyebrow as="time" dateTime={post.updated_at} className="md:hidden" decorate
             >
-                {formatDate(post.created_at)}
+                {yyyymmddDate(post.updated_at)}
             </Card.Eyebrow>{' '} <Card.Description>{post.description_cn}</Card.Description>{' '} <Card.Cta>Read article</Card.Cta>{' '}
-            </Card>{' '} <Card.Eyebrow as="time" dateTime={post.created_at} className="mt-1 hidden md:block"
+            </Card>{' '} <Card.Eyebrow as="time" dateTime={post.updated_at} className="mt-1 hidden md:block"
         >
-            {formatDate(post.created_at)}
+            {yyyymmddDate(post.updated_at)}
         </Card.Eyebrow>
         </article>
     )

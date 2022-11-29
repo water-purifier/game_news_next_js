@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Container } from '@/components/Container'
-import { formatDate } from '@/lib/formatDate'
+import {formatDate, yyyymmddDate} from '@/lib/formatDate'
 import { Prose } from '@/components/Prose'
 
 function ArrowLeftIcon(props) {
@@ -68,7 +68,7 @@ export function ArticleLayout({
                   className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                  <span className="ml-3">{formatDate(meta.date)}</span>
+                  <span className="ml-3">{yyyymmddDate(meta.date)}</span>
                   <span className="ml-3">-</span>
                   <a href={meta.original_url}>
                     <span className="ml-3">{meta.author}</span>

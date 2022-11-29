@@ -4,10 +4,14 @@ export function formatDate(dateString) {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
-        timeZone: 'Asia/Shanghai',
+        timeZone: 'Asia/Hong_kong',
     })
 }
 
 export function yyyymmddDate(dateString) {
-    return new Date(`${dateString}`).toISOString().slice(0, 10);
+    if(dateString){
+        return new Date(`${dateString}`).toISOString().slice(0, 10);
+    }else{
+        return '0000-00-00'
+    }
 }
