@@ -70,6 +70,7 @@ export async function getPosts() {
 }
 
 export async function getServerSideProps() {
+    //Up Test
     const data = await getPosts()
     return {
         props: {
