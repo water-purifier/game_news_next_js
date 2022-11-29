@@ -7,6 +7,7 @@ export default function Home(props){
         date: props.post.created_at,
         title: props.post.title_cn,
         description: props.post.description_cn,
+        original_url: props.post.url_ori,
     }
     return(
         <ArticleLayout meta={meta} {...props} />
