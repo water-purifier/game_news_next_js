@@ -1,6 +1,6 @@
 //pages/sitemap.xml.jsx
 import process from "process";
-import {useRouter} from 'next/router';
+import { yyyymmddDate } from '@/lib/formatDate'
 
 const EXTERNAL_DATA_URL = `${process.env.LOCAL_HOST}/articles`;
 const limit = 1000
@@ -9,10 +9,11 @@ function generateSiteMap(posts) {
 
     return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     ${posts.map(({id}) => {
+     ${posts.map(({id,updated_at}) => {
         return `
        <url>
            <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
+           <lastmod>${`${yyyymmddDate(updated_at)}`}</lastmod>
        </url>
      `;
     })
