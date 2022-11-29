@@ -19,19 +19,6 @@ export async function getPostsPaths(){
     return data
 }
 
-export async function getStaticPaths(){
-    const posts = await getPostsPaths()
-    const paths = posts.map((post)=>({
-        params: {
-            title: post.title_en.toString(),
-            id: post.id.toString(),
-        }
-    }))
-    return {
-        paths,
-        fallback: false
-    }
-}
 
 export async function getPost(id){
     const res = await fetch(`${process.env.API_HOST}/posts/${id}`)
@@ -39,14 +26,8 @@ export async function getPost(id){
     return data
 }
 
-export async function getStaticProps({params}) {
-    const paths = await getStaticPaths();
-    let id = 0;
-    paths.paths.map((path)=>{
-        if(path.params.title == params.title){
-            id = path.params.id;
-        }
-    })
+export async function getServerSideProps({req, params}) {
+    const id = params.id;
     const post = await getPost(id)
     return {
         props: {

@@ -11,7 +11,7 @@ function Article({post}) {
     return (
         <article className="md:grid md:grid-cols-4 md:items-baseline">
             <Card className="md:col-span-3">
-                {' '} <Card.Title href={`/articles/${post.title_en}`}>
+                {' '} <Card.Title href={`/articles/${post.id}`}>
                 {post.title_cn}
             </Card.Title>{' '} <Card.Eyebrow as="time" dateTime={post.created_at} className="md:hidden" decorate
             >
@@ -69,7 +69,7 @@ export async function getPosts() {
     return data;
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data = await getPosts()
     return {
         props: {
